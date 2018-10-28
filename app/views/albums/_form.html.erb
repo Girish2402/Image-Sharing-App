@@ -1,0 +1,19 @@
+<%= simple_form_for @album do |f| %>
+  <%= f.input :name %>
+  <h4>Photos</h4>
+  <div id='photos'>
+    <%= f.simple_fields_for :photos do |photo| %>
+      <%= render 'photo_fields', :f => photo %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add photo', f, :photos %>
+    </div>
+  </div>
+  <%= f.submit 'Save', :class => "btn btn-primary", :disabled =>"true" %>
+<% end %>
+
+<style type="text/css">
+  .links{
+    margin: 20px 0;
+  }
+</style>

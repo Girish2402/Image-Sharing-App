@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ImageSharingApp</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %><!-- 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Image Sharing App</a>
+    </div>
+    <ul class="nav navbar-nav">
+  	<% if user_signed_in? %>
+      <li>
+      	  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      </li>
+  	<% else %>
+    	<li><%= link_to "Sign up", new_user_registration_path %></li>
+    	<li><%= link_to "sign in", new_user_session_path %></li>
+	  <% end %>
+	  <% if user_signed_in? %>
+      <li><a href="/my_profile">My Profile</a></li>
+      <li><a href="<%=new_album_path%>">Create New Album</a></li>
+	  <% end %>
+    </ul>
+  </div>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>

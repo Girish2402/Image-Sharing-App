@@ -1,0 +1,25 @@
+
+<div class="container">
+
+  <h1 class="my-4 text-center text-lg-left">Gallery</h1>
+
+  <div class="row">
+    <% @images.each do |image| %>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <a href="#">
+            <%= image_tag(image.image_url, :class => 'img-fluid img-thumbnail', :style => "width: 100%") %>
+            <div class="caption">
+              <p><b>Tag Line: <%=image.tagline%></b></p>
+              <p><b>Album: <%=image.album.name%></b></p>
+              <p><b>Created By: <%=image.album.user.email%></b></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+
