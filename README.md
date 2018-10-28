@@ -10,8 +10,6 @@
 	http://localhost:3000/
 
 # Step 3:
-		Create new Album by click on tab "Create New Album"
-		
-# Step 4:
-   Now you can see the uploaded photo and their information to home page.
+	Create new Album by click on tab "Create New Album"
+   	Now you can see the uploaded photo and their information to home page.
 	
