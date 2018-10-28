@@ -1,6 +1,8 @@
-# Image-Sharing-App
+This README would normally document whatever steps are necessary to get the application up and running.
 
-# Install MongoDB
+Things you may want to cover:
+
+Ruby version: 2.3.1 Rails Version: 4.0.1
 
 # Step 1:
 	Bundle install
